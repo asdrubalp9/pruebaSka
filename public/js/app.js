@@ -10,10 +10,22 @@ var app = angular.module('pruebaSka_App', [
 //DO NOT EDIT THIS ROUTES, USE NEXT COMMENT SECTION
 
 // START - ROUTE
+	.when('configuracion', {
+	  templateUrl: 'html/Configuracion.html',
+	  resolve: {
+		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.hasRole([ 'ADMIN','GOD', ]); }]
+	  },
+	})
 	.when('/home', {
 	  templateUrl: 'html/Home.html',
 	  resolve: {
 		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.isAuthenticated(); }]
+	  },
+	})
+	.when('menus', {
+	  templateUrl: 'html/Menus.html',
+	  resolve: {
+		  user: ["AuthenticationService", function(AuthenticationService) { return AuthenticationService.hasRole([ 'ADMIN','GOD', ]); }]
 	  },
 	})
 	.when('login', {
