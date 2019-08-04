@@ -27,7 +27,18 @@ import SecurityController from "../controllers/SecurityController";
 import Database_PruebaSka_db from "./Database_PruebaSka_db.js";
 
 // Controllers
+import EmpresasController from "../controllers/PruebaSka_db/EmpresasController";
 import UserController from "../controllers/PruebaSka_db/UserController";
+import CategoriaMenuController from "../controllers/PruebaSka_db/CategoriaMenuController";
+import ConfigController from "../controllers/PruebaSka_db/ConfigController";
+import ItemMenuController from "../controllers/PruebaSka_db/ItemMenuController";
+import ItemOrdenController from "../controllers/PruebaSka_db/ItemOrdenController";
+import MediaController from "../controllers/PruebaSka_db/MediaController";
+import MenuController from "../controllers/PruebaSka_db/MenuController";
+import MesasController from "../controllers/PruebaSka_db/MesasController";
+import OrdenesController from "../controllers/PruebaSka_db/OrdenesController";
+import TiposMediaController from "../controllers/PruebaSka_db/TiposMediaController";
+import UserEmpresaController from "../controllers/PruebaSka_db/UserEmpresaController";
 
 // End Import Controllers
 
@@ -100,7 +111,18 @@ class Server {
     SecurityController.init(router);
 
     // Start Init Controllers
+		EmpresasController.init(router);
 		UserController.init(router);
+		CategoriaMenuController.init(router);
+		ConfigController.init(router);
+		ItemMenuController.init(router);
+		ItemOrdenController.init(router);
+		MediaController.init(router);
+		MenuController.init(router);
+		MesasController.init(router);
+		OrdenesController.init(router);
+		TiposMediaController.init(router);
+		UserEmpresaController.init(router);
 		 // End Init Controllers
 
     this.app.use("/", router);

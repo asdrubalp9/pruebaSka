@@ -33,20 +33,35 @@ const generatedModel = {
       * User
       */
     const userSchema = new mongoose.Schema({
-      mail: {
+      email: {
         type: "String"
       },
-      name: {
+      fechaAlta: {
+        type: "Date"
+      },
+      flag: {
+        type: "String"
+      },
+      hash: {
+        type: "String"
+      },
+      lastLog: {
+        type: "Date"
+      },
+      level: {
+        type: "Number"
+      },
+      nombres: {
         type: "String"
       },
       password: {
         type: "String", 
         required : true
       },
-      roles: [{
-        type: "String"
-      }],
-      surname: {
+      recibeOfertas: {
+        type: "Boolean"
+      },
+      telefono: {
         type: "String"
       },
       username: {
@@ -58,6 +73,14 @@ const generatedModel = {
       
       //EXTERNAL RELATIONS
       /*
+      idUsuario: {
+        type: Schema.ObjectId,
+        ref : "ordenes"
+      },
+      idUsuario: [{
+        type: Schema.ObjectId,
+        ref : "userEmpresa"
+      }],
       */
     });
 
